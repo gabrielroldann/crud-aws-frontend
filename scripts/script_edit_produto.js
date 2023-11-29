@@ -4,7 +4,7 @@ function abrirEditProduto(id_produto) {
     const modal = document.getElementById('modalEdit');
     modal.showModal();
 
-    fetch(`http://localhost:3000/products/${id_produto}`, {
+    fetch(`http://13.59.172.220:3000/products/${id_produto}`, {
         method: "GET",
         headers: {"Content-type": "application/json; charset=UTF-8"}
     })
@@ -55,7 +55,7 @@ function editarProduto(id_produto) {
         price: newPrice.value
     }
     
-    fetch(`http://localhost:3000/products/${id_produto}`, {
+    fetch(`http://13.59.172.220:3000/products/${id_produto}`, {
         method: "PUT",
         body: JSON.stringify(data),
         headers: {"Content-type": "application/json; charset=UTF-8"}

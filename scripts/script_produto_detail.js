@@ -4,7 +4,7 @@ const urlParams = new URLSearchParams(queryString);
 const id_produto = urlParams.get('id');
 console.log(id_produto);
 
-fetch(`http://localhost:3000/products/${id_produto}`, {
+fetch(`http://13.59.172.220:3000/products/${id_produto}`, {
     method: "GET",
     headers: {"Content-type": "application/json; charset=UTF-8"}
 })

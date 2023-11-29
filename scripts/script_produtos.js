@@ -41,7 +41,7 @@ addProduto.addEventListener('click', () => {
         price: price.value
     }
     
-    fetch('http://localhost:3000/products', {
+    fetch('http://13.59.172.220:3000/products', {
         method: "POST",
         body: JSON.stringify(dados),
         headers: {"Content-type": "application/json; charset=UTF-8"}
