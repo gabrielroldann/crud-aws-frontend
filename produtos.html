@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Contatos</title>
+
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    
+    <header>
+        <a href="#" id="logo">LOGO</a>
+        
+        <div id="items">
+            <a href="index.html">HOME</a>
+            <a href="">PRODUTOS</a>
+        </div>
+
+    </header>
+
+    <main id="conteudo">
+        <div id="tabela">
+            <div id="cabecalho-tabela">
+                <h3>Tabela de Produtos</h3>
+                <h4 id="abrirModal" onclick="abrirAddProduto()">Adicionar Produto</h4>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>NOME</th>
+                        <th>DESCRIÇÃO</th>
+                        <th>PREÇO</th>
+                        <th colspan="3">AÇÃO</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+        <dialog id="modal">
+            <div id="popup">
+                <div id="cabecalho_popup">
+                    <h4>ADICIONAR UM PRODUTO</h4>
+                    <ion-icon id="close_popup" onclick="fecharModal()" name="close-outline"></ion-icon>
+                </div>
+
+                <form>
+                    <input required type="text" name="nome" id="name" placeholder="Nome">
+                    <input required type="text" name="description" id="description" placeholder="Descrição">
+                    <input required type="number" step="0" min="0" name="price" id="price" placeholder="Preço">
+                    <input id="addProduto" type="submit" value="Adicionar">
+                </form>
+            </div>
+        </dialog>
+
+        <dialog id="modalEdit">
+            <div id="popupEdit">
+                <div id="cabecalho_popupEdit">
+                    <h4>EDITAR UM PRODUTO</h4>
+                    <ion-icon id="close_popupEdit" onclick="fecharModalEdit()" name="close-outline"></ion-icon>
+                </div>
+
+                <form>
+                    <input required type="text" name="nome" id="name-editar" placeholder="Nome">
+                    <input required type="text" name="description" id="description-editar" placeholder="Descrição">
+                    <input required type="number" step="0" min="0" name="price" id="price-editar" placeholder="Preço">
+                    <input id="editProduto" type="submit" value="Editar">
+                </form>
+            </div>
+        </dialog>
+    </main>
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./scripts/script_edit_produto.js"></script>
+    <script src="./scripts/script_produtos.js"></script>
+    <script src="./scripts/script_deletar.js"></script>
+</body>
+</html>

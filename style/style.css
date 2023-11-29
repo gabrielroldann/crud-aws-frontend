@@ -1,0 +1,376 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* background: url(./assets/6271875.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; */
+
+    overflow: hidden;
+}
+
+header {
+    width: 60%;
+    margin: 0 auto;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+
+    background-color: rgba(0, 0, 0, 0.8);
+
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+
+    box-shadow: 0 0 12px 3px rgba(0, 0, 0, 0.4);
+}
+
+header #logo {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+
+    transition: all 0.3s;
+}
+
+header #logo:hover {
+    color: rgb(49, 102, 163);
+}
+
+header #items {
+    display: flex;
+    gap: 2.5rem;
+}
+
+header #items a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 0.7px;
+
+    position: relative;
+
+    transition: all 0.3s;
+}
+
+header #items a::before {
+    content: "";
+    position: absolute;
+    height: 1.5px;
+    width: 0;
+    background-color: rgb(49, 102, 163);
+    bottom: -20%;
+    left: 1%;
+
+    transition: all 0.3s;
+}
+
+header #items a:hover::before {
+    animation: ani 0.3s forwards;
+}
+
+@keyframes ani {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 60%;
+    }
+}
+
+header #items a:hover {
+    color: rgb(49, 102, 163);
+}
+
+/* tabela */
+
+#conteudo {
+    height: 90%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#conteudo_verContato {
+    height: 30%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+#tabela {
+    margin: 0 auto;
+    height: 85%;
+    width: 60%;
+
+    border-radius: 1rem;
+
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+#tabela_verContato {
+    margin: 0 auto;
+    height: 85%;
+    width: 80%;
+
+    border-radius: 1rem;
+
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+#conteudo #tabela table {
+    margin-top: 1rem;
+    /* border: 1px solid blue; */
+    width: 100%;
+    height: 85%;
+    text-align: center;
+}
+
+#conteudo_verContato #tabela_verContato table {
+    margin-top: 1rem;
+    /* border: 1px solid blue; */
+    width: 100%;
+    height: 85%;
+    text-align: center;
+}
+
+#conteudo #tabela table a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 6px;
+
+    transition: all 0.3s ease-out;
+}
+
+#conteudo #tabela table a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+#conteudo #tabela table thead tr {
+    /* border: 1px solid red; */
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+}
+
+#cabecalho-tabela {
+    border-bottom: 2px solid white;
+    
+    height: 5rem;
+    width: 100%;
+    padding: 0 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#cabecalho-tabela #abrirModal {
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    background-color: rgb(27, 56, 89);
+    text-align: center;
+
+    transition: all 0.3s;
+}
+
+#cabecalho-tabela #abrirModal:hover {
+    background-color: rgb(50, 82, 119);
+    box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+/* FORMULARIO e POPUP */
+
+dialog {
+    margin: 0 auto;
+    margin-top: 6rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+
+    height: 60%;
+    width: 30%;
+    
+    color: white;
+
+    border: 2px solid white;
+    border-radius: 1rem;
+
+    padding: 1rem 1.5rem;
+
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+#popup, #popupEdit {
+    width: 100%;
+    height: 100%;
+
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    /* backdrop-filter: blur(1px); */
+    /* -webkit-backdrop-filter: blur(1px); */
+    border-radius: 1rem;
+}
+
+#cabecalho_popup, #cabecalho_popupEdit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 8px;
+
+    border-bottom: 2px solid white;
+}
+
+#cabecalho_popup #close_popup,
+#cabecalho_popupEdit #close_popupEdit{
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: rgb(27, 56, 89);
+}
+
+#cabecalho_popup #close_popup:hover,
+#cabecalho_popupEdit #close_popupEdit:hover {
+    background-color: rgb(50, 82, 119);
+    box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+form {
+    /* border: 2px solid red; */
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+#name, #description, #price,
+#name-editar, #description-editar, #price-editar {
+    padding: 0.8rem 0.5rem;
+    font-size: 0.9rem;
+    border-radius: 0.3rem;
+    outline: 0;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+#addProduto, #editProduto {
+    margin: 0 auto;
+    margin-top: 1.5rem;
+    border-radius: 0.5rem;
+    padding: 0.7rem 0;
+    width: 50%;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: none;
+    background-color: rgb(27, 56, 89);
+    color: white;
+    text-align: center;
+
+    transition: all 0.2s;
+}
+
+#addProduto:hover,
+#editProduto:hover {
+    background-color: rgb(50, 82, 119);
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+
+/* FILMES */
+
+#buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+#buttons a {
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    background-color: rgb(27, 56, 89);
+    text-align: center;
+
+    transition: all 0.3s;
+}
+
+#buttons a:hover {
+    background-color: rgb(50, 82, 119);
+    box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+#filtroFilmesGeneros {
+    display: flex;
+    /* align-items: center; */
+    gap: 0.4rem;
+}
+
+#filtroNome {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    padding: 0.6rem;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    width: 300px;
+
+    transition: all 0.18s;
+}
+
+#filtroNome::placeholder {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+#filtroNome:focus {
+    box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.4);
+}
